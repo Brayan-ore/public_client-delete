@@ -1,4 +1,4 @@
-package com.bootcamp.public_servicecliente;
+package com.bootcamp.public_serviceclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
