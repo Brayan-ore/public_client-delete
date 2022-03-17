@@ -1,5 +1,7 @@
 package com.bootcamp.public_serviceclient.service.impl;
 
+import com.bootcamp.public_serviceclient.service.BusinessClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.public_serviceclient.model.dao.BusinessClient;
@@ -9,11 +11,12 @@ import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
+
 @RequiredArgsConstructor
-public class BusinessClientServiceImpl {
+@Service
+public class BusinessClientServiceImpl implements BusinessClientService {
 	
-	
+	@Autowired
 	private BusinessClientCrudRepository repository;
 	
 	public Flux<BusinessClient> findAll() {

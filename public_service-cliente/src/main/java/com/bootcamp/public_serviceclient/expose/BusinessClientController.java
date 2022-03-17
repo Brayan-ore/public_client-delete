@@ -1,5 +1,6 @@
 package com.bootcamp.public_serviceclient.expose;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,31 +22,32 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class BusinessClientController {
 
-	private BusinessClientService service;
+    @Autowired //ADDED
+	private BusinessClientService businessClientService;
 	
 	@GetMapping
     public Flux<BusinessClient> findAll() {
-        return service.findAll();
+        return businessClientService.findAll();
     }
 
     @GetMapping("/{id}")
     public Mono<BusinessClient> findById(@PathVariable String id) {
-        return service.findById(id);
+        return businessClientService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping("/upload")
     public Mono<BusinessClient> save(@RequestBody BusinessClient client) {
-        return service.save(client);
+        return businessClientService.save(client);
     }
 
     @PutMapping
     public Mono<BusinessClient> put(@RequestBody BusinessClient client) {
-        return service.save(client);
+        return businessClientService.save(client);
     }
 
     @DeleteMapping("/{id}")
     public Mono<Void> delete(@PathVariable String id) {
-        return service.deleteById(id);
+        return businessClientService.deleteById(id);
     }
 	
 }

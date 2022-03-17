@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document
+@Document(value = "business_client") //ADDED
 public class BusinessClient {
 
 	@Id

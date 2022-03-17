@@ -1,6 +1,7 @@
 package com.bootcamp.public_serviceclient.service;
 
 import com.bootcamp.public_serviceclient.model.dao.PersonalClient;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
